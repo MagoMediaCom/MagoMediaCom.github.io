@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .banner_box {
+            width: 100%;
+            height: auto;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .banner_box img {
+            width: 100%;
+            height: auto;
+        }
+
+        .banner_box .logo {
+            width: 100px;
+            height: 50px;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner_box .logo img {
+            width: 90px;
+            height: 40px;
+        }
+
+        .banner_content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper_box {
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper_content {
+            width: 1200px;
+            height: auto;
+            margin: 60px auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left_icon,
+        .right_icon {
+            width: 100px;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .left_icon img,
+        .right_icon img {
+            width: 30px;
+            height: 40px;
+        }
+
+        .swiper_one {
+            width: 400px;
+            height: 300px;
+            position: relative;
+        }
+
+        .swiper_two {
+            width: 400px;
+            height: 300px;
+            position: relative;
+        }
+
+        .swiper_one img,
+        .swiper_two img {
+            width: 100%;
+            height: auto;
+        }
+
+        .swiper_text {
+            width: 90%;
+            height: 40px;
+            position: absolute;
+            bottom: 40px;
+            left: 5%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        .titles {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .titles span {
+            font-size: 40px;
+            font-weight: bolder;
+        }
+
+        .titles .border {
+            width: 120px;
+            height: 15px;
+            background-color: lightgray;
+            position: relative;
+            bottom: 10px;
+        }
+
+        .word_box {
+            width: 100%;
+            height: auto;
+            background-color: #000000;
+            padding: 50px 0;
+            margin-top: 40px;
+        }
+
+        .word_box .word_content {
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            font-size: 20px;
+            color: #FFFFFF;
+        }
+
+        .img_list {
+            width: 100%;
+            height: auto;
+            margin: 60px 0;
+        }
+
+        .img_list .img_content {
+            width: 1200px;
+            height: auto;
+            margin: auto;
+        }
+
+        .img_row {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: baseline;
+        }
+
+        .img_row .img1 {
+            width: 270px;
+            height: auto;
+        }
+
+        .img_row .img2 {
+            width: 400px;
+            height: auto;
+        }
+
+        .img_row .img3 {
+            width: 300px;
+            height: auto;
+        }
+
+        .img_row2 {
+            width: 100%;
+            height: auto;
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .img_row2 .img4 {
+            width: 380px;
+            height: auto;
+        }
+
+        .img_row2 .img5 {
+            width: 300px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .business_box {
+            width: 100%;
+            height: auto;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .business_box img {
+            width: 100%;
+            height: 300px;
+        }
+
+        .business_content {
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .content_column {
+            width: 200px;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content_column img {
+            width: 150px;
+            height: 150px;
+        }
+
+        .content_column span {
+            width: 100%;
+            height: auto;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .found_box {
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .found_box .imgs1 {
+            width: 850px;
+            height: auto;
+        }
+
+        /* .found_box .imgs2 {
+            width: 80px;
+            height: auto;
+        }
+
+        .found_box .imgs3 {
+            width: 80px;
+            height: auto;
+        } */
+
+        .map_box {
+            width: 100%;
+            height: auto;
+            margin-top: 50px;
+        }
+
+        .map_content {
+            width: 1000px;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        .map_content img {
+            width: 1000px;
+            height: 500px;
+            margin: auto;
+        }
+
+        /* footer */
+        .footer_box {
+            width: calc(100% - 80px);
+            height: auto;
+            padding: 40px;
+            background-color: #000000;
+            margin-top: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+
+        .footer_box .logo {
+            width: 100px;
+            height: 50px;
+        }
+
+        .footer_box .logo img {
+            width: 100px;
+            height: 40px;
+        }
+
+        .footer_content {
+            width: calc(100% - 130px);
+            height: auto;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content_box {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .content_box .footer_text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            color: #FFFFFF;
+        }
+
+        .content_box .footer_text .title {
+            font-size: 34px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .content_box .footer_text .text_item {
+            font-size: 26px;
+            margin-bottom: 14px;
+        }
+
+        .footer_icon {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .footer_icon img {
+            width: 70px;
+            height: 70px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="body">
+        <!-- banner -->
+        <div class="banner_box">
+            <img src="./image/banner.png" alt="">
+            <div class="logo">
+                <img src="./image/底部logo.png" alt="">
+            </div>
+            <div class="banner_content">
+                <span style="font-size: 50px;font-weight: bolder;">Looking for change in mago</span>
+                <span style="font-size: 36px;font-weight: bolder;margin-top: 20px;">view video</span>
+            </div>
+        </div>
+        <!-- swiper -->
+        <div class="swiper_box">
+            <div class="swiper_content">
+                <div class="left_icon">
+                    <img src="./image/左箭头.png" alt="">
+                </div>
+                <div class="swiper_one">
+                    <img src="./image/签约主播.png" alt="">
+                    <div class="swiper_text">8522+</div>
+                </div>
+                <div class="swiper_two">
+                    <img src="./image/孵化红人.png" alt="">
+                    <div class="swiper_text">43+</div>
+                </div>
+                <div class="right_icon">
+                    <img src="./image/右箭头.png" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- About Mago -->
+        <div class="titles">
+            <span>About Mago</span>
+            <div class="border"></div>
+        </div>
+        <!-- word -->
+        <div class="word_box">
+            <div class="word_content">
+                <p>[MaGo], founded in 2021, is a local internet based media and entertainment brokeragecompany for
+                    Chinese companies to take root overseas. Founder&CEO is Mr. Li Yanmo. ltnas extensive influence in
+                    live broadcast, short video and e-commerce.</p>
+                <p style="margin-top: 30px;">At present, the company has Thai entertainment live broadcast, Malavsian
+                    entertainment liveoroadcast association, and Japanese entertainment live broadcast. The company
+                    hassuccessively won the top 1 official ranking of TIKTOK At the same time, the company alsonas rich
+                    experience in online celebrity cultivation, and has a broker team and contentcreation team. The
+                    total number of TlKTOK fans exceeds 192 million, and the monthlybroadcast volume exceeds 80 million.
+                </p>
+            </div>
+        </div>
+        <!-- img_list -->
+        <div class="img_list">
+            <div class="img_content">
+                <div class="img_row">
+                    <img class="img1" src="./image/图1.png" alt="">
+                    <img class="img2" src="./image/图2.png" alt="">
+                    <img class="img3" src="./image/图3.png" alt="">
+                </div>
+                <div class="img_row2">
+                    <img class="img4" src="./image/图4.png" alt="">
+                    <img class="img5" src="./image/图5.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <!-- Corporate business -->
+        <div class="titles">
+            <span>Corporate business</span>
+            <div class="border"></div>
+        </div>
+        <div class="business_box">
+            <div class="business_content">
+                <div class="content_column">
+                    <img src="./image/网红孵化.png" alt="">
+                    <span>Network Red Incubation</span>
+                </div>
+                <div class="content_column">
+                    <img src="./image/娱乐直播.png" alt="">
+                    <span>Live entertainment</span>
+                </div>
+                <div class="content_column">
+                    <img src="./image/电商直播.png" alt="">
+                    <span>E-commerce live broadcast</span>
+                </div>
+                <div class="content_column">
+                    <img src="./image/广告执行.png" alt="">
+                    <span>Advertising Execution</span>
+                </div>
+            </div>
+        </div>
+        <!-- Changes found in MaGo -->
+        <div class="titles">
+            <span>Changes found in MaGo</span>
+            <div class="border"></div>
+        </div>
+        <div class="found_box">
+            <img class="imgs2" src="./image/banner_left.png" alt="">
+            <img class="imgs1" src="./image/banner1.png" alt="">
+            <img class="imgs3" src="./image/banner_right.png" alt="">
+        </div>
+        <!-- Here we areness -->
+        <div class="titles">
+            <span>Here we areness</span>
+            <div class="border"></div>
+        </div>
+        <div class="map_box">
+            <div class="map_content">
+                <img src="./image/map.png" alt="">
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="footer_box">
+            <div class="logo">
+                <img src="./image/底部logo.png" alt="">
+            </div>
+            <div class="footer_content">
+                <div class="content_box">
+                    <div class="footer_text">
+                        <div class="title">Host joining</div>
+                        <div class="text_item">FB: Mago.tiktoklive</div>
+                        <div class="text_item">Line: mago.th</div>
+                        <div class="text_item">IG: mago.tiktoklive</div>
+                    </div>
+                    <div class="footer_text">
+                        <div class="title">Actors join</div>
+                        <div class="text_item">FB: Mago Cultere Media Co., Ltd.</div>
+                        <div class="text_item">Line: magomedia</div>
+                        <div class="text_item">IG: mago_entertainment1</div>
+                    </div>
+                    <div class="footer_text">
+                        <div class="title">Business cooperation</div>
+                        <div class="text_item">FB: Mago.Influencer</div>
+                        <div class="text_item">Line: Magoinfluencer</div>
+                        <div class="text_item">IG: mago.influencer</div>
+                    </div>
+                </div>
+                <div class="footer_icon">
+                    <img src="./image/底部1.png" alt="">
+                    <img src="./image/底部2.png" alt="">
+                    <img src="./image/底部3.png" alt="">
+                    <img src="./image/底部4.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
