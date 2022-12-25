@@ -118,8 +118,7 @@
         }
 
         .swiper_content {
-            /* width: 1200px; */
-            width: 100%;
+            width: 1200px;
             height: auto;
             margin: 60px auto;
             display: flex;
@@ -199,16 +198,15 @@
         }
 
         .word_box {
-            width: calc(100% - 30px);
+            width: 100%;
             height: auto;
             background-color: #000000;
-            padding: 50px 15px;
+            padding: 50px 0;
             margin-top: 40px;
         }
 
         .word_box .word_content {
-            /* width: 1200px; */
-            width: 100%;
+            width: 1200px;
             height: auto;
             margin: auto;
             font-size: 20px;
@@ -222,8 +220,7 @@
         }
 
         .img_list .img_content {
-            /* width: 1200px; */
-            width: 100%;
+            width: 1200px;
             height: auto;
             margin: auto;
         }
@@ -286,8 +283,7 @@
         }
 
         .business_content {
-            /* width: 1200px; */
-            width: 100%;
+            width: 1200px;
             height: auto;
             margin: auto;
             display: flex;
@@ -319,8 +315,7 @@
         }
 
         .found_box {
-            /* width: 1200px; */
-            width: 100%;
+            width: 1200px;
             height: auto;
             margin: auto;
             display: flex;
@@ -332,7 +327,7 @@
         }
 
         .found_box .imgs1 {
-            width: 810px;
+            width: 850px;
             height: auto;
         }
 
@@ -353,7 +348,7 @@
         }
 
         .map_content {
-            width: 100%;
+            width: 1000px;
             height: 500px;
             display: flex;
             flex-direction: row;
@@ -363,7 +358,7 @@
         }
 
         .map_content img {
-            width: 100%;
+            width: 1000px;
             height: 500px;
             margin: auto;
         }
@@ -418,15 +413,13 @@
         }
 
         .content_box .footer_text .title {
-            /* font-size: 34px; */
-            font-size: 1.3rem;
+            font-size: 34px;
             margin-bottom: 20px;
             text-align: left;
         }
 
         .content_box .footer_text .text_item {
-            /* font-size: 26px; */
-            font-size: 1rem;
+            font-size: 26px;
             margin-bottom: 14px;
         }
 
@@ -451,11 +444,11 @@
             var language = document.getElementById('language');
             language.style.display = 'block';
         }
+        function switch_en() {
+            window.location.href = 'index.html'
+        }
         function switch_zh() {
             window.location.href = 'zh_index.html'
-        }
-        function switch_jp() {
-            window.location.href = 'jp_index.html'
         }
     </script>
 </head>
@@ -468,13 +461,13 @@
             <div class="logo">
                 <img src="./image/底部logo.png" alt="">
             </div>
-            <div id="switch" class="switch" onclick="switch_tab()">English</div>
+            <div id="switch" class="switch" onclick="switch_tab()">日本語</div>
             <div id="language" class="language">
                 <div class="item" onclick="switch_zh()">中文</div>
-                <div class="item" onclick="switch_jp()">日本語</div>
+                <div class="item" onclick="switch_en()">English</div>
             </div>
             <div class="banner_content">
-                <span style="font-size: 50px;font-weight: bolder;text-align: center;">Looking for change in mago</span>
+                <span style="font-size: 50px;font-weight: bolder;">Magoの中で変化を求める</span>
                 <span style="font-size: 36px;font-weight: bolder;margin-top: 20px;">view video</span>
             </div>
         </div>
@@ -499,20 +492,17 @@
         </div>
         <!-- About Mago -->
         <div class="titles">
-            <span>About Mago</span>
+            <span>MaGoについて</span>
             <div class="border"></div>
         </div>
         <!-- word -->
         <div class="word_box">
             <div class="word_content">
-                <p>[MaGo], founded in 2021, is a local internet based media and entertainment brokeragecompany for
-                    Chinese companies to take root overseas. Founder&CEO is Mr. Li Yanmo. ltnas extensive influence in
-                    live broadcast, short video and e-commerce.</p>
-                <p style="margin-top: 30px;">At present, the company has Thai entertainment live broadcast, Malavsian
-                    entertainment liveoroadcast association, and Japanese entertainment live broadcast. The company
-                    hassuccessively won the top 1 official ranking of TIKTOK At the same time, the company alsonas rich
-                    experience in online celebrity cultivation, and has a broker team and contentcreation team. The
-                    total number of TlKTOK fans exceeds 192 million, and the monthlybroadcast volume exceeds 80 million.
+                <p>【MaGo】は2021年に設立され、中国系企業が海外に根ざしたインターネットメディアとエンターテイメント会社です。 創設者兼 CEO は Li Yanmo 氏です。
+                    同社は、エンターテインメントライブ放送、インフルエンサー育成のインキュベーション、ライブストリーミングで豊富な経験を持っています.</p>
+                <p style="margin-top: 30px;">現在、同社はタイのエンターテインメントライブ放送、マレーシアのエンターテインメントライブ放送、日本のエンターテインメントライブ放送を行っています。
+                    同時に、同社はTIKTOKの公式ランキングで連続して1位を獲得しています。 同社はまた、インフルエンサー養成のインキュベーションにおいて豊富な経験を持っています。
+                    同社には、マネージャーチームとコンテンツストーリー作成チームがあります。 TIKTOKファンの総数は1億9200万人を超えています。 月間放送量は8000万回を超える。
                 </p>
             </div>
         </div>
@@ -533,26 +523,26 @@
         </div>
         <!-- Corporate business -->
         <div class="titles">
-            <span>Corporate business</span>
+            <span>会社の業務</span>
             <div class="border"></div>
         </div>
         <div class="business_box">
             <div class="business_content">
                 <div class="content_column">
                     <img src="./image/网红孵化.png" alt="">
-                    <span>Cultivate Internet Crimson</span>
+                    <span>インフルエンサーの育成</span>
                 </div>
                 <div class="content_column">
                     <img src="./image/娱乐直播.png" alt="">
-                    <span>Live entertainment</span>
+                    <span>エンターテイメントライブ</span>
                 </div>
                 <div class="content_column">
                     <img src="./image/电商直播.png" alt="">
-                    <span>Live selling</span>
+                    <span>ライブコマース</span>
                 </div>
                 <div class="content_column">
                     <img src="./image/广告执行.png" alt="">
-                    <span>Advertising Execution</span>
+                    <span>広告マスコミ</span>
                 </div>
             </div>
         </div>
@@ -568,7 +558,7 @@
         </div>
         <!-- Here we areness -->
         <div class="titles">
-            <span>Company address</span>
+            <span>会社住所</span>
             <div class="border"></div>
         </div>
         <div class="map_box">
