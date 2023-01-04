@@ -445,8 +445,24 @@
             height: 70px;
             margin-left: 15px;
         }
+
+        .video-box {
+            padding-bottom: 56.25%;
+            width: 100%;
+            position: relative;
+        }
+
+        .video-box video {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
     </style>
     <script>
+
         function switch_tab() {
             var language = document.getElementById('language');
             language.style.display = 'block';
@@ -457,14 +473,82 @@
         function switch_jp() {
             window.location.href = 'jp_index.html'
         }
+        function video_click() {
+            console.log('video_click');
+            var video1 = document.getElementById("videoPlay1");
+            
+            console.log(video1);
+            if (video1.paused) {
+                //隐藏banner_content
+                var banner_content = document.getElementById("banner_content");
+                banner_content.style.display = 'none';
+                video1.play();
+            } else {
+                //显示banner_content
+                var banner_content = document.getElementById("banner_content");
+                banner_content.style.display = 'flex';
+                video1.pause();
+            }
+        }
+
+        var img_list = ["./image/l.jpg","./image/banner1.png","./image/r.jpg"];
+        var img_list2 = ["./image/banner_left.png","./image/c.png","./image/banner_right.png"];
+        var img_index = 0;
+        function left_img_click() {
+            img_index--;
+            if (img_index < 0) {
+                img_index = img_list.length - 1;
+            }
+            var img = document.getElementById("center_img");
+            img.src = img_list[img_index];
+
+            var left_index = img_index - 1;
+            if (left_index < 0) {
+                left_index = img_list.length - 1;
+            }
+            var left_img = document.getElementById("left_img");
+            left_img.src = img_list2[left_index];
+
+            var right_index = img_index + 1;
+            if (right_index >= img_list.length) {
+                right_index = 0;
+            }
+            var right_img = document.getElementById("right_img");
+            right_img.src = img_list2[right_index];
+        }
+        function right_img_click() {
+            img_index++;
+            if (img_index >= img_list.length) {
+                img_index = 0;
+            }
+            var img = document.getElementById("center_img");
+            img.src = img_list[img_index];
+
+            var left_index = img_index - 1;
+            if (left_index < 0) {
+                left_index = img_list.length - 1;
+            }
+            var left_img = document.getElementById("left_img");
+            left_img.src = img_list2[left_index];
+
+            var right_index = img_index + 1;
+            if (right_index >= img_list.length) {
+                right_index = 0;
+            }
+            var right_img = document.getElementById("right_img");
+            right_img.src = img_list2[right_index];
+        }
     </script>
 </head>
 
 <body>
     <div class="body">
         <!-- banner -->
-        <div class="banner_box">
-            <img src="./image/banner.png" alt="">
+        <div class="banner_box" onclick="video_click()">
+            <!-- <img src="./image/banner.png" alt=""> -->
+            <video id="videoPlay1" style="width: 100%;" poster="./image/banner.png" loop>
+                <source src="./image/video.mp4" type="video/mp4">
+            </video>
             <div class="logo">
                 <img src="./image/底部logo.png" alt="">
             </div>
@@ -473,7 +557,7 @@
                 <div class="item" onclick="switch_zh()">中文</div>
                 <div class="item" onclick="switch_jp()">日本語</div>
             </div>
-            <div class="banner_content">
+            <div id="banner_content" class="banner_content">
                 <span style="font-size: 50px;font-weight: bolder;text-align: center;">Looking for change in mago</span>
                 <span style="font-size: 36px;font-weight: bolder;margin-top: 20px;">view video</span>
             </div>
@@ -482,7 +566,7 @@
         <div class="swiper_box">
             <div class="swiper_content">
                 <div class="left_icon">
-                    <img src="./image/左箭头.png" alt="">
+                    <!-- <img src="./image/左箭头.png" alt=""> -->
                 </div>
                 <div class="swiper_one">
                     <img src="./image/签约主播.png" alt="">
@@ -493,7 +577,7 @@
                     <div class="swiper_text">43+</div>
                 </div>
                 <div class="right_icon">
-                    <img src="./image/右箭头.png" alt="">
+                    <!-- <img src="./image/右箭头.png" alt=""> -->
                 </div>
             </div>
         </div>
@@ -561,10 +645,10 @@
             <span>Changes found in MaGo</span>
             <div class="border"></div>
         </div>
-        <div class="found_box">
-            <img class="imgs2" src="./image/banner_left.png" alt="">
-            <img class="imgs1" src="./image/banner1.png" alt="">
-            <img class="imgs3" src="./image/banner_right.png" alt="">
+        <div id="loop_box" class="found_box">
+            <img onclick="left_img_click()" id="left_img" class="imgs2" src="./image/banner_left.png" alt="">
+            <img id="center_img" class="imgs1" src="./image/banner1.png" alt="">
+            <img onclick="right_img_click()" id="right_img" class="imgs3" src="./image/banner_right.png" alt="">
         </div>
         <!-- Here we areness -->
         <div class="titles">
