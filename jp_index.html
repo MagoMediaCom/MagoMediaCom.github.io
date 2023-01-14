@@ -445,7 +445,21 @@
             height: 70px;
             margin-left: 15px;
         }
+        
+        .coverInfo {
+            overflow-x: scroll;
+        }
+
+        .coverInfo ul {
+            list-style: none;
+            display: -webkit-box;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+        }
     </style>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/touch.js"></script>
     <script>
         function switch_tab() {
             var language = document.getElementById('language');
@@ -522,6 +536,25 @@
                 var right_img = document.getElementById("right_img");
                 right_img.src = img_list2[right_index];
             }
+            $(document).ready(function () {
+
+                    $('#center_img').rhuiSwipe('swipeLeft', function (event) {
+                        left_img_click();
+                    }, {
+                        // 可选参数
+                        isStopPropagation: true,
+                        isPreventDefault: true,
+                        triggerOnMove: true
+                    });
+                    $('#center_img').rhuiSwipe('swipeRight', function (event) {
+                        right_img_click();
+                    }, {
+                        // 可选参数
+                        isStopPropagation: true,
+                        isPreventDefault: true,
+                        triggerOnMove: true
+                    });
+                });
     </script>
 </head>
 
@@ -550,18 +583,38 @@
         <div class="swiper_box">
             <div class="swiper_content">
                 <div class="left_icon">
-                    <!-- <img src="./image/左箭头.png" alt=""> -->
+                    <img src="./image/左箭头.png" alt="">
                 </div>
-                <div class="swiper_one">
-                    <img src="./image/签约主播.png" alt="">
-                    <div class="swiper_text">8522+</div>
-                </div>
-                <div class="swiper_two">
-                    <img src="./image/孵化红人.png" alt="">
-                    <div class="swiper_text">43+</div>
+                <div class="coverInfo">
+                    <ul>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/签约主播.png" alt="">
+                                <div class="swiper_text">8522+</div>
+                            </div>
+                        </li>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/孵化红人.png" alt="">
+                                <div class="swiper_text">43+</div>
+                            </div>
+                        </li>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/合作品牌.jpg" alt="">
+                                <div class="swiper_text">130+</div>
+                            </div>
+                        </li>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/全球粉丝.jpg" alt="">
+                                <div class="swiper_text">192000000+</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="right_icon">
-                    <!-- <img src="./image/右箭头.png" alt=""> -->
+                    <img src="./image/右箭头.png" alt="">
                 </div>
             </div>
         </div>

@@ -460,7 +460,21 @@
             left: 0;
             object-fit: cover;
         }
+
+        .coverInfo {
+            overflow-x: scroll;
+        }
+
+        .coverInfo ul {
+            list-style: none;
+            display: -webkit-box;
+            -webkit-overflow-scrolling: touch;
+            -ms-overflow-style: none;
+            overflow: -moz-scrollbars-none;
+        }
     </style>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/touch.js"></script>
     <script>
 
         function switch_tab() {
@@ -476,7 +490,7 @@
         function video_click() {
             console.log('video_click');
             var video1 = document.getElementById("videoPlay1");
-            
+
             console.log(video1);
             if (video1.paused) {
                 //隐藏banner_content
@@ -490,9 +504,21 @@
                 video1.pause();
             }
         }
+        // $('#items li').swipe(function () {
+        //         11   $('.delete').hide()
+        //         12   $('.delete', this).show()
+        //         13
+        //     })
+        //     14
+        //     15 // delete row on tapping delete button
+        //     16 $('.delete').tap(function () {
+        //         17   $(this).parent('li').remove()
+        //         18
+        //     })
 
-        var img_list = ["./image/l.jpg","./image/banner1.png","./image/r.jpg"];
-        var img_list2 = ["./image/banner_left.png","./image/c.png","./image/banner_right.png"];
+
+        var img_list = ["./image/l.jpg", "./image/banner1.png", "./image/r.jpg"];
+        var img_list2 = ["./image/banner_left.png", "./image/c.png", "./image/banner_right.png"];
         var img_index = 0;
         function left_img_click() {
             img_index--;
@@ -538,6 +564,28 @@
             var right_img = document.getElementById("right_img");
             right_img.src = img_list2[right_index];
         }
+        
+
+        $(document).ready(function () {
+
+            $('#center_img').rhuiSwipe('swipeLeft', function (event) {
+                left_img_click();
+            }, {
+                // 可选参数
+                isStopPropagation: true,
+                isPreventDefault: true,
+                triggerOnMove: true
+            });
+            $('#center_img').rhuiSwipe('swipeRight', function (event) {
+                right_img_click();
+            }, {
+                // 可选参数
+                isStopPropagation: true,
+                isPreventDefault: true,
+                triggerOnMove: true
+            });
+        });
+
     </script>
 </head>
 
@@ -566,18 +614,38 @@
         <div class="swiper_box">
             <div class="swiper_content">
                 <div class="left_icon">
-                    <!-- <img src="./image/左箭头.png" alt=""> -->
+                    <img src="./image/左箭头.png" alt="">
                 </div>
-                <div class="swiper_one">
-                    <img src="./image/签约主播.png" alt="">
-                    <div class="swiper_text">8522+</div>
-                </div>
-                <div class="swiper_two">
-                    <img src="./image/孵化红人.png" alt="">
-                    <div class="swiper_text">43+</div>
+                <div class="coverInfo">
+                    <ul>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/签约主播.png" alt="">
+                                <div class="swiper_text">8522+</div>
+                            </div>
+                        </li>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/孵化红人.png" alt="">
+                                <div class="swiper_text">43+</div>
+                            </div>
+                        </li>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/合作品牌.jpg" alt="">
+                                <div class="swiper_text">130+</div>
+                            </div>
+                        </li>
+                        <li class="itemInCovers">
+                            <div class="swiper_one">
+                                <img src="./image/全球粉丝.jpg" alt="">
+                                <div class="swiper_text">192000000+</div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <div class="right_icon">
-                    <!-- <img src="./image/右箭头.png" alt=""> -->
+                    <img src="./image/右箭头.png" alt="">
                 </div>
             </div>
         </div>
